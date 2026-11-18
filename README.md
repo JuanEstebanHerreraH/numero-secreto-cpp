@@ -1,24 +1,36 @@
-# 🎯 Parcial: Juego de Números Aleatorios  
+# Número secreto · C++
 
-[![Java](https://img.shields.io/badge/Java-ED8B00?style=for-the-badge&logo=java&logoColor=white)]()
-[![C++](https://img.shields.io/badge/C++-00599C?style=for-the-badge&logo=cplusplus&logoColor=white)]()
-[![CUN](https://img.shields.io/badge/CUN-Universidad-blue?style=for-the-badge)]()
+**Ejercicio de consola sobre números aleatorios, comparación de listas y conteo de aciertos.**
 
-Este proyecto fue desarrollado como parte de un **parcial universitario en la CUN (Corporación Unificada Nacional de Educación Superior)**.  
+Proyecto académico para un parcial en la CUN. El archivo fuente visible en el repositorio es [ParcialC++.cpp](ParcialC%2B%2B.cpp); no se documenta como si hubiera una implementación Java separada disponible.
 
-El programa consiste en un pequeño juego de azar donde el usuario debe ingresar **5 números entre 100 y 130**, y el sistema genera otros **5 números secretos** (únicos y aleatorios en ese mismo rango).  
+## Cómo funciona
 
-Según la cantidad de aciertos, se asigna una nota:
+1. Genera cinco números secretos distintos entre 100 y 130.
+2. Solicita cinco números al usuario.
+3. Compara ambas listas, cuenta coincidencias y muestra una nota.
 
-- ✅ **2 o más aciertos** → Nota **4.80**  
-- ✅ **1 acierto** → Nota **3.0**  
-- ❌ **0 aciertos** → Nota **2.0**
+## Compilar y ejecutar
 
----
+Necesitas un compilador C++ como GCC/MinGW.
 
-## 📌 Características
-- 🔢 Generación de números aleatorios **sin repetición**.  
-- 🆚 Comparación entre la lista ingresada y la lista secreta.  
-- 📝 Evaluación automática de la nota.  
-- ⚡ Implementaciones en **Java** y **C++**.  
+~~~sh
+g++ "ParcialC++.cpp" -o numero-secreto
+~~~
 
+En Windows ejecuta `.\numero-secreto.exe`; en Linux o macOS, `./numero-secreto`.
+
+## Comportamiento actual y pendiente de corregir
+
+| Coincidencias contadas | Nota que imprime el código actual |
+| --- | --- |
+| Más de 2 | 4.80 |
+| 2 o menos | 3.0 |
+
+El mensaje inicial anuncia 4.80 con un mínimo de dos aciertos, pero la condición implementada es `contador > 2`. Tampoco aplica una nota distinta para cero aciertos. Esta diferencia se conserva como límite del ejercicio, no como una función corregida.
+
+La entrada no valida el rango ni evita que el usuario repita números. El conteo puede aumentar por repeticiones en la entrada. Se utiliza `rand()` con una semilla temporal para practicar; no es un generador criptográfico.
+
+## Qué se practica
+
+Arreglos, bucles anidados, generación pseudoaleatoria, comparación de valores y condicionales. El archivo comprimido del repositorio se conserva como material adicional del trabajo.
